@@ -1,0 +1,27 @@
+
+body {
+    background-image: url("../../assets/images/wallpaper.png");
+    background-position: top left;
+}
+
+h1 {
+    background-color: cadetblue;
+
+
+}
+
+p {
+    background-color: darkgoldenrod;
+}
+
+.number {
+    background-color: cyan;
+}
+
+.winLoss {
+    background-color: orange;
+}
+
+.score {
+    background-color: dodgerblue;
+}
