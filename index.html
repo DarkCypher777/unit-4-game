@@ -54,9 +54,9 @@
     </div>
     <div class="win-losses">
         <b>
-        Wins:
-        <br>
-        Losses:
+            Wins:
+            <br>
+            Losses:
         </b>
     </div>
 
@@ -88,9 +88,47 @@
 
 
     <!-- Insert Javascript here -->
-    <script>
+    <script type="text/javascript">
+
+        // --Game Process--
+        // 1. User vists site
+        // 2. Values are set for the RNG (Should be between 19 - 120)
+        // 3. Values are set for the buttons/crystals (Should be between 1 - 12)
+        // 4. User presses/clicks 1 of 4 buttons
+        // 5. Value from button/crystal updates total score
+        // 6. User presses/clicks 1 of 4 buttons again
+        // 7. Value updates in total score from previous action
+        // 8.1. If player reaches exact value in RNG player wins, score in win increases, game reset
+        // 8.2. Else if player goes above the value in RNG player loses, score in losses increase, game reset
+        // 9. When game resets, Total score resets to 0 and value for RNG and crystals randomizes
+        // 10. Play again?
 
 
+        // Javascript Process
+        // 1. Create Varibles
+        // 2. Create Array
+        // 3. Create for loops (console.log it)
+        // 4. Functions
+        // 5.
+
+        $(document).ready(function () {
+
+            // Varibles
+            var crystals = ["crystal1, crystal2, crystal3, crystal4"];
+
+            var randomNumber
+
+            var result = 0;
+
+
+            // The random number shown at the start of the game should be between 19 - 120.
+            Math.floor(Math.random() * 120) + 19;
+
+            // Each crystal should have a random hidden value between 1 - 12.
+            Math.floor(Math.random() * 12) + 1;
+
+
+        });
     </script>
 
 </body>
