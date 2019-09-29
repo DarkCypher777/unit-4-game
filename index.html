@@ -50,7 +50,7 @@
 
     <!-- Random Number Generator and Score board -->
     <div class="computer-number">
-        35
+
     </div>
     <div class="win-losses">
         <b>
@@ -82,19 +82,19 @@
     </div>
 
     <!-- Player Number -->
-    <div class="player-number">
+    <div class="user-number">
         Your Total Score is:
     </div>
 
 
     <!-- Insert Javascript here -->
     <script type="text/javascript">
-
         // --Game Process--
         // 1. User vists site
         // 2. Values are set for the RNG (Should be between 19 - 120)
         // 3. Values are set for the buttons/crystals (Should be between 1 - 12)
         // 4. User presses/clicks 1 of 4 buttons
+
         // 5. Value from button/crystal updates total score
         // 6. User presses/clicks 1 of 4 buttons again
         // 7. Value updates in total score from previous action
@@ -105,28 +105,109 @@
 
 
         // Javascript Process
-        // 1. Create Varibles
-        // 2. Create Array
-        // 3. Create for loops (console.log it)
-        // 4. Functions
-        // 5.
 
         $(document).ready(function () {
 
             // Varibles
-            var crystals = ["crystal1, crystal2, crystal3, crystal4"];
 
-            var randomNumber
+            var crystalNumber = {};
+            var crystalNumber1 = Math.floor(Math.random() * 12) + 1;
+            var crystalNumber2 = Math.floor(Math.random() * 12) + 1;
+            var crystalNumber3 = Math.floor(Math.random() * 12) + 1;
+            var crystalNumber4 = Math.floor(Math.random() * 12) + 1;
 
-            var result = 0;
+            var gameNumber = Math.floor(Math.random() * 120) + 19;
+
+            var userScore = 0;
+            var win = 0;
+            var losses = 0;
+
+            //console.log(crystals)
+            console.log(crystalNumber1)
+            console.log(crystalNumber2)
+            console.log(crystalNumber3)
+            console.log(crystalNumber4)
+            console.log(gameNumber)
+            console.log(userScore)
+            console.log(win)
+            console.log(losses)
+
+            // Functions
+
+            $("#crystal1").click(function () {
+
+                if (userScore == gameNumber) {
+                    win();
+                    resetGame();
+                } 
+                else if (userScore > gameNumber) {
+                    losses();
+                    resetGame();
+                }
+            });
+
+            $("#crystal2").click(function () {
+
+                if (userScore == gameNumber) {
+                    win();
+                    resetGame();
+                } 
+                else if (userScore > gameNumber) {
+                    losses();
+                    resetGame();
+                }
+            });
+
+            $("#crystal3").click(function () {
+
+                if (userScore == gameNumber) {
+                    win();
+                    resetGame();
+                } 
+                else if (userScore > gameNumber) {
+                    losses();
+                    resetGame();
+                }
+            });
+
+            $("#crystal4").click(function () {
+
+                if (userScore == gameNumber) {
+                    win();
+                    resetGame();
+                } 
+                else if (userScore > gameNumber) {
+                    losses();
+                    resetGame();
+                }
+            });
 
 
-            // The random number shown at the start of the game should be between 19 - 120.
-            Math.floor(Math.random() * 120) + 19;
+            function win() {
+                win++
+            }
 
-            // Each crystal should have a random hidden value between 1 - 12.
-            Math.floor(Math.random() * 12) + 1;
+            function losses() {
+                losses++
+            }
 
+            // if (userScore === gameNumber) {
+            //     win()
+            //     resetGame()
+            // } 
+
+            // else if (userScore > gameNumber) {
+            //     losses()
+            //     resetGame()
+            // }
+
+            function resetGame() {
+                crystalNumber1()
+                crystalNumber2()
+                crystalNumber3()
+                crystalNumber4()
+                gameNumber()
+            }
 
         });
     </script>
