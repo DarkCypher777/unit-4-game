@@ -17,7 +17,7 @@ h1 {
     padding: 10px;
 }
 
-.computer-number {
+#computer-number {
     background-color: cadetblue;
     width: 250px;
     height: 100px;
@@ -26,14 +26,14 @@ h1 {
     padding: 20px;
 }
 
-.win-losses {
+#win-losses {
     background-color: orange;
     width: 250px;
     height: 100px;
     padding: 20px;
 }
 
-.player-number {
+#user-score {
     background-color: dodgerblue;
     width: 250px;
     height: 150px;
