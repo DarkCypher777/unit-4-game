@@ -48,205 +48,53 @@
         </p>
     </div>
 
-    <!-- Random Number Generator and Score board -->
-    <div id="computer-number">
-
-    </div>
-
-    <div id="win-losses">
-        <b>
-            Wins:
-            <br>
-            Losses:
-        </b>
-    </div>
-
     <!-- crystals Area -->
     <div>
-        <div class="crystals">
-            <button id="crystal1" type="button" class="btn btn-primary">
-                <img src="assets/images/crystal1.jpg" alt="crystal 1" width=200px; height=200px;>
-            </button>
+        <div class="row">
+            <div class="col-3.5">
+                <div class="crystals">
+                    <button id="crystal1" type="button" class="btn btn-primary">
+                        <img src="assets/images/crystal1.jpg" alt="crystal 1" width=200px; height=200px;>
+                    </button>
 
-            <button id="crystal2" type="button" class="btn btn-primary">
-                <img src="assets/images/crystal2.jpg" alt="crystal 2" width=200px; height=200px;>
-            </button>>
+                    <button id="crystal2" type="button" class="btn btn-primary">
+                        <img src="assets/images/crystal2.jpg" alt="crystal 2" width=200px; height=200px;>
+                    </button>>
 
-            <button is="crystal3" type="button" class="btn btn-primary">
-                <img src="assets/images/crystal3.jpg" alt="crystal 3" width=200px; height=200px;>
-            </button>
+                    <br>
 
-            <button id="crystal4" type="button" class="btn btn-primary">
-                <img src="assets/images/crystal4.jpg" alt="crystal 4" width=200px; height=200px;>
-            </button>
+                    <button id="crystal3" type="button" class="btn btn-primary">
+                        <img src="assets/images/crystal3.jpg" alt="crystal 3" width=200px; height=200px;>
+                    </button>
+
+                    <button id="crystal4" type="button" class="btn btn-primary">
+                        <img src="assets/images/crystal4.jpg" alt="crystal 4" width=200px; height=200px;>
+                    </button>
+                </div>
+            </div>
+            <div class="col-2.5">
+                <div class="card text-white bg-dark mb-3" style="width: 100%;">
+                    <div class="card-body">
+
+                        <div id="computer-number"></div>
+
+                        <div id="win-losses">
+
+                            <div id="win"></div>
+                            <br>
+                            <div id="losses"></div>
+
+                        </div>
+
+                        <div>
+                            <div id="user-score"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Player Number -->
-    <div>
-        <div id="user-score">
-
-        </div>
-    </div>
-
-
-    <!-- Insert Javascript here -->
-    <script type="text/javascript">
-        // --Game Process--
-        // 1. User vists site
-        // 2. Values are set for the RNG (Should be between 19 - 120)
-        // 3. Values are set for the buttons/crystals (Should be between 1 - 12)
-        // 4. User presses/clicks 1 of 4 buttons
-
-        // 5. Value from button/crystal updates total score
-        // 6. User presses/clicks 1 of 4 buttons again
-        // 7. Value updates in total score from previous action
-        // 8.1. If player reaches exact value in RNG player wins, score in win increases, game reset
-        // 8.2. Else if player goes above the value in RNG player loses, score in losses increase, game reset
-        // 9. When game resets, Total score resets to 0 and value for RNG and crystals randomizes
-        // 10. Play again?
-
-
-        // Javascript Process
-
-        $(document).ready(function () {
-
-            // Varibles
-
-
-            // for (var i = 0; i < 4; i++) {
-            //     crystalNumbers = Math.floor(Math.random() * 12) + 1;
-            // }
-
-            var crystalNumber1 = Math.floor(Math.random() * 12) + 1;
-            var crystalNumber2 = Math.floor(Math.random() * 12) + 1;
-            var crystalNumber3 = Math.floor(Math.random() * 12) + 1;
-            var crystalNumber4 = Math.floor(Math.random() * 12) + 1;
-
-            $("#crystal1").val(crystalNumber1)
-            $("#crystal2").val(crystalNumber2)
-            $("#crystal3").val(crystalNumber3)
-            $("#crystal4").val(crystalNumber4)
-
-            var gameNumber = Math.floor(Math.random() * 120) + 19;
-
-            var userScore = 0;
-            var win = 0;
-            var losses = 0;
-
-            // console log
-            // console.log(crystalNumbers)
-            console.log(crystalNumber1)
-            console.log(crystalNumber2)
-            console.log(crystalNumber3)
-            console.log(crystalNumber4)
-            console.log(gameNumber)
-            console.log(userScore)
-            console.log(win)
-            console.log(losses)
-
-
-            // Functions
-
-            $("#crystal1").click(function (event) {
-                userScore = userScore = crystalNumber1;
-
-                var crystalValue = event.target.value
-
-                $("#user-score").text("Your score: " + userScore);
-                console.log(crystalNumber1)
-
-                if (userScore === gameNumber) {
-                    win();
-                    resetGame();
-                } else if (userScore > gameNumber) {
-                    losses();
-                    resetGame();
-                }
-            });
-
-
-            $("#crystal2").click(function (event) {
-
-                var crystalValue = event.target.value
-                $("#user-score").text("Your score: " + userScore);
-
-                console.log(crystalNumber2)
-
-                if (userScore === gameNumber) {
-                    win();
-                    resetGame();
-                } else if (userScore > gameNumber) {
-                    losses();
-                    resetGame();
-                }
-            });
-
-            $("#crystal3").click(function (event) {
-                var crystalValue = event.target.value
-                $("#user-score").text("Your score: " + userScore);
-
-                console.log(crystalNumber3)
-
-                if (userScore == gameNumber) {
-                    win();
-                    resetGame();
-                } else if (userScore > gameNumber) {
-                    losses();
-                    resetGame();
-                }
-            });
-
-            $("#crystal4").click(function (event) {
-
-                var crystalValue = event.target.value
-                $("#user-score").text("Your score: " + userScore);
-
-                console.log(crystalNumber4)
-
-                if (userScore == gameNumber) {
-                    win();
-                    resetGame();
-                } else if (userScore > gameNumber) {
-                    losses();
-                    resetGame();
-                }
-            });
-
-
-            function win() {
-                win++
-            }
-
-            function losses() {
-                losses++
-            }
-
-            // if (userScore === gameNumber) {
-            //     win()
-            //     resetGame()
-            // } 
-
-            // else if (userScore > gameNumber) {
-            //     losses()
-            //     resetGame()
-            // }
-
-            function resetGame() {
-                crystalNumber1 = Math.floor(Math.random() * 12) + 1;
-                crystalNumber2 = Math.floor(Math.random() * 12) + 1;
-                crystalNumber3 = Math.floor(Math.random() * 12) + 1;
-                crystalNumber4 = Math.floor(Math.random() * 12) + 1;
-
-                $("#crystal1").val(crystalNumber1)
-                $("#crystal2").val(crystalNumber2)
-                $("#crystal3").val(crystalNumber3)
-                $("#crystal4").val(crystalNumber4)
-
-            }
-
-        });
-    </script>
 
 </body>
 

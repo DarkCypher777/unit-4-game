@@ -5,12 +5,15 @@ body {
 }
 
 h1 {
+    border-radius: 15px;
     background-color: cadetblue;
     width: 320px;
-    height: auto;
+    height: 55px;
+    text-align: center;
 }
 
 .rules {
+    border-radius: 25px;
     background-color: darkgoldenrod;
     width: 700px;
     height: auto;
@@ -36,5 +39,7 @@ h1 {
 #user-score {
     background-color: dodgerblue;
     width: 250px;
-    height: 150px;
+    height: 100px;
+    text-align: left;
+    
 }
