@@ -13,15 +13,13 @@
 // 10. Play again?
 
 
-// Javascript Process
-
 $(document).ready(function () {
 
     // Varibles
 
-    var crystalNumber1 = Math.floor(Math.random() * 12) + 1;
-    var crystalNumber2 = Math.floor(Math.random() * 12) + 1;
-    var crystalNumber3 = Math.floor(Math.random() * 12) + 1;
+    var crystalNumber1 = Math.floor(Math.random() * 5) + 1;
+    var crystalNumber2 = Math.floor(Math.random() * 6) + 1;
+    var crystalNumber3 = Math.floor(Math.random() * 10) + 1;
     var crystalNumber4 = Math.floor(Math.random() * 12) + 1;
 
     $("#crystal1").val(crystalNumber1)
@@ -36,13 +34,12 @@ $(document).ready(function () {
     var losses = 0;
 
     $("#user-score").text("Your Score: " + userScore);
-    $("#computer-number").text("target: " + gameNumber);
+    $("#computer-number").text("Target: " + gameNumber);
     $("#win").text("Wins: " + win);
     $("#losses").text("Losses: " + losses);
-    
 
-    // console log
-    // console.log(crystalNumbers)
+
+    // Console log
     console.log(crystalNumber1)
     console.log(crystalNumber2)
     console.log(crystalNumber3)
@@ -51,7 +48,6 @@ $(document).ready(function () {
     console.log(userScore)
     console.log(win)
     console.log(losses)
-
 
     // Functions
 
@@ -76,7 +72,6 @@ $(document).ready(function () {
 
         var crystalValue = event.target.value
         userScore = userScore + crystalNumber2;
-
         $("#user-score").text("Your score: " + userScore);
 
         console.log(crystalNumber2)
